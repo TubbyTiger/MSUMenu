@@ -41,7 +41,7 @@ public class BrodySquareActivity extends Activity {
     }
     private class Title extends AsyncTask<Void, Void, Void>{
 
-        String test;
+        String titletxt;
 
         @Override
         protected void onPreExecute() {
@@ -60,7 +60,7 @@ public class BrodySquareActivity extends Activity {
                 Document document = Jsoup.connect(url).get();
                 //get html document title
                 Elements title = document.select("div[class = field-item field-item-0]");
-                test = title.text();
+                titletxt = title.text();
 
 
 
@@ -77,7 +77,7 @@ public class BrodySquareActivity extends Activity {
         protected void onPostExecute(Void result) {
             // Set description into TextView
             TextView BPTitle = (TextView) findViewById(R.id.BoilingPointTitle);
-            BPTitle.setText(test);
+            BPTitle.setText(titletxt);
             mProgressDialog.dismiss();
         }
 
