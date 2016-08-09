@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import android.os.AsyncTask;
@@ -13,6 +14,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +31,7 @@ public class BrodySquareActivity extends Activity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brody_square);
         new Title().execute();
@@ -37,7 +40,9 @@ public class BrodySquareActivity extends Activity {
 
     }
     private class Title extends AsyncTask<Void, Void, Void>{
-        String title;
+
+        String test;
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -54,7 +59,9 @@ public class BrodySquareActivity extends Activity {
                 // Connect to website
                 Document document = Jsoup.connect(url).get();
                 //get html document title
-                Elements title = document.getElementsByClass("field-item field-item-0");
+                Elements title = document.select("div[class = field-item field-item-0]");
+                test = title.text();
+
 
 
 
@@ -70,7 +77,7 @@ public class BrodySquareActivity extends Activity {
         protected void onPostExecute(Void result) {
             // Set description into TextView
             TextView BPTitle = (TextView) findViewById(R.id.BoilingPointTitle);
-            BPTitle.setText(title);
+            BPTitle.setText(test);
             mProgressDialog.dismiss();
         }
 
