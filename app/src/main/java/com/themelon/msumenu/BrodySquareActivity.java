@@ -56,6 +56,8 @@ public class BrodySquareActivity extends Activity {
                 //get html document title
                 Elements title = document.getElementsByClass("field-item field-item-0");
 
+
+
             }
                 catch (IOException e) {
                     e.printStackTrace();
