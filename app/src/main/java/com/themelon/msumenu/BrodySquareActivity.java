@@ -62,11 +62,11 @@ public class BrodySquareActivity extends Activity {
 
                 //get html document title
 
-                Element elements = document.select("td[class = views-field views-field-field-lunch-menu-value]").get(0);
+                Element BPLunchElem = document.select("td[class = views-field views-field-field-lunch-menu-value]").get(0);
 
 
 
-                boilingPointDesc = elements.text();
+                boilingPointDesc = BPLunchElem.text();
                 System.out.println(boilingPointDesc);
 
 
