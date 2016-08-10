@@ -90,7 +90,7 @@ public class BrodySquareActivity extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             // Set description into TextView
-            TextView BPTitle = (TextView) findViewById(R.id.BoilingPointTitle);
+            TextView BPTitle = (TextView) findViewById(R.id.BPLunchTxt);
             BPTitle.setText(boilingPointDesc);
             mProgressDialog.dismiss();
         }
