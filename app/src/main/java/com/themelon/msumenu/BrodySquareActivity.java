@@ -7,6 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.jsoup.select.Evaluator;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -41,7 +42,7 @@ public class BrodySquareActivity extends Activity {
     }
     private class Title extends AsyncTask<Void, Void, Void>{
 
-        String titletxt;
+        String boilingPointDesc;
 
         @Override
         protected void onPreExecute() {
@@ -58,9 +59,22 @@ public class BrodySquareActivity extends Activity {
             try {
                 // Connect to website
                 Document document = Jsoup.connect(url).get();
+
                 //get html document title
-                Elements title = document.select("div[class = field-item field-item-0]");
-                titletxt = title.text();
+
+                Element elements = document.select("td[class = views-field views-field-field-lunch-menu-value]").get(0);
+
+
+
+                boilingPointDesc = elements.text();
+                System.out.println(boilingPointDesc);
+
+
+
+
+
+
+
 
 
 
@@ -77,7 +91,7 @@ public class BrodySquareActivity extends Activity {
         protected void onPostExecute(Void result) {
             // Set description into TextView
             TextView BPTitle = (TextView) findViewById(R.id.BoilingPointTitle);
-            BPTitle.setText(titletxt);
+            BPTitle.setText(boilingPointDesc);
             mProgressDialog.dismiss();
         }
 
