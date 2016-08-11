@@ -40,9 +40,12 @@ public class BrodySquareActivity extends Activity {
 
 
     }
-    private class Title extends AsyncTask<Void, Void, Void>{
 
-        String boilingPointDesc;
+
+    private class Title extends AsyncTask<Void, Void, Void>{
+        String BPBreakfastraw,BPLunchraw,BPDinnerraw,BPLateNightraw;
+
+
 
         @Override
         protected void onPreExecute() {
@@ -61,13 +64,21 @@ public class BrodySquareActivity extends Activity {
                 Document document = Jsoup.connect(url).get();
 
                 //get html document title
+                // The first food elements are boiling point, 0
+                Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(0);
+                Element BPLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(0);
+                Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
+                Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
 
-                Element BPLunchElem = document.select("td[class = views-field views-field-field-lunch-menu-value]").get(0);
 
 
 
-                boilingPointDesc = BPLunchElem.text();
-                System.out.println(boilingPointDesc);
+                BPBreakfastraw = BPBreakfastElem.text();
+                BPLunchraw = BPLunchElem.text();
+                BPDinnerraw = BPDinnerElem.text();
+                BPLateNightraw = BPLateNightElem.text();
+
+
 
 
 
@@ -89,9 +100,17 @@ public class BrodySquareActivity extends Activity {
         }
         @Override
         protected void onPostExecute(Void result) {
-            // Set description into TextView
-            TextView BPTitle = (TextView) findViewById(R.id.BPLunchTxt);
-            BPTitle.setText(boilingPointDesc);
+        //     Set description into TextView
+            TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
+            BPBreakfast.setText(BPBreakfastraw);
+            TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
+            BPLunch.setText(BPLunchraw);
+            TextView BPDinner = (TextView) findViewById(R.id.BPDinnerTxt);
+            BPDinner.setText(BPDinnerraw);
+            TextView BPLateNight = (TextView) findViewById(R.id.BPLateNightTxt);
+            BPLateNight.setText(BPLateNightraw);
+
+
             mProgressDialog.dismiss();
         }
 
