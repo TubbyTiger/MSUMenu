@@ -70,6 +70,8 @@ public class BrodySquareActivity extends Activity {
                 Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
                 Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
 
+                Elements counter = BPLunchElem.getElementsByTag("div");
+                System.out.println(counter.size());
 
 
 
@@ -77,6 +79,9 @@ public class BrodySquareActivity extends Activity {
                 BPLunchraw = BPLunchElem.text();
                 BPDinnerraw = BPDinnerElem.text();
                 BPLateNightraw = BPLateNightElem.text();
+
+
+
 
 
 

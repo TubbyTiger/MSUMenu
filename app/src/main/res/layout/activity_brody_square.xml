@@ -42,7 +42,8 @@
                     android:text="Breakfast"
                     android:id="@+id/textView2"
                     android:textAlignment="center"
-                    android:textIsSelectable="false" />
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -51,7 +52,8 @@
                     android:text="Lunch"
                     android:id="@+id/textView3"
                     android:textAlignment="center"
-                    android:textIsSelectable="false" />
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -60,7 +62,8 @@
                     android:text="Dinner"
                     android:id="@+id/textView4"
                     android:textAlignment="center"
-                    android:textIsSelectable="false" />
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -69,7 +72,8 @@
                     android:text="Late Night"
                     android:id="@+id/textView6"
                     android:textAlignment="center"
-                    android:textIsSelectable="false" />
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
 
             </TableRow>
 
