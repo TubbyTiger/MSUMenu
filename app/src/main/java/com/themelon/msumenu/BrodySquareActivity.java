@@ -100,6 +100,7 @@ public class BrodySquareActivity extends Activity {
         }
         @Override
         protected void onPostExecute(Void result) {
+
         //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
             BPBreakfast.setText(BPBreakfastraw);
