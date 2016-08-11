@@ -103,10 +103,13 @@ public class BrodySquareActivity extends Activity {
         //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
             BPBreakfast.setText(BPBreakfastraw);
+
             TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
             BPLunch.setText(BPLunchraw);
+
             TextView BPDinner = (TextView) findViewById(R.id.BPDinnerTxt);
             BPDinner.setText(BPDinnerraw);
+
             TextView BPLateNight = (TextView) findViewById(R.id.BPLateNightTxt);
             BPLateNight.setText(BPLateNightraw);
 
