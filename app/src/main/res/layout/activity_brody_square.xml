@@ -694,6 +694,190 @@
 
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Stacks"
+                android:id="@+id/textView37"
+                android:textAlignment="center"
+                android:layout_column="1" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Breakfast"
+                    android:id="@+id/textView38"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch"
+                    android:id="@+id/textView39"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner"
+                    android:id="@+id/textView40"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Late Night"
+                    android:id="@+id/textView41"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/STBreakfasttxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/STLunchTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/STDinnerTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/STLateNightTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Veg Out"
+                android:id="@+id/textView42"
+                android:textAlignment="center"
+                android:layout_column="1" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Breakfast"
+                    android:id="@+id/textView43"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch"
+                    android:id="@+id/textView44"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner"
+                    android:id="@+id/textView45"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Late Night"
+                    android:id="@+id/textView46"
+                    android:textAlignment="center"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VOBreakfasttxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VOLunchTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VODinnerTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VOLateNightTxt"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+            </TableRow>
+
 
 
         </TableLayout>
