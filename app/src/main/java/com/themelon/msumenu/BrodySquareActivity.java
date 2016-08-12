@@ -2,6 +2,7 @@ package com.themelon.msumenu;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -44,6 +45,9 @@ public class BrodySquareActivity extends Activity {
 
     private class Title extends AsyncTask<Void, Void, Void>{
         String BPBreakfastraw,BPLunchraw,BPDinnerraw,BPLateNightraw;
+        String testing;
+        String BPLunchtxt,BPLunchtxta;
+        ArrayList<String> BPLunchArray = new ArrayList<String>();
 
 
 
@@ -71,30 +75,30 @@ public class BrodySquareActivity extends Activity {
                 Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
 
                 Elements counter = BPLunchElem.getElementsByTag("div");
-                System.out.println(counter.size());
 
+
+
+                int count = counter.size();
+
+
+                for (int i=0;i<count;i++){
+                    String temp = Integer.toString(i);
+                    Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
+                    System.out.println(BPLunchtxt.text());
+
+                    BPLunchArray.add(BPLunchtxt.text());
+
+                }
+
+
+
+                Element testing = document.select("div[class=field-item field-item-3]").get(0);
 
 
                 BPBreakfastraw = BPBreakfastElem.text();
                 BPLunchraw = BPLunchElem.text();
                 BPDinnerraw = BPDinnerElem.text();
                 BPLateNightraw = BPLateNightElem.text();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
                 catch (IOException e) {
                     e.printStackTrace();
@@ -112,7 +116,13 @@ public class BrodySquareActivity extends Activity {
             BPBreakfast.setText(BPBreakfastraw);
 
             TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
-            BPLunch.setText(BPLunchraw);
+            for (int k=0;k<BPLunchArray.size();k++){
+                System.out.println("HWEF");
+                String Temptxt = BPLunchArray.get(k);
+                BPLunch.append(Temptxt + "\n");
+            }
+
+
 
             TextView BPDinner = (TextView) findViewById(R.id.BPDinnerTxt);
             BPDinner.setText(BPDinnerraw);
