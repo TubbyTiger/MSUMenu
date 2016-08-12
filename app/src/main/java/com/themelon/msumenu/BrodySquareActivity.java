@@ -32,7 +32,18 @@ public class BrodySquareActivity extends Activity {
     ProgressDialog mProgressDialog;
 
 
-    @Override
+
+    public void foodArray(int count, int foodIndex, ArrayList<String> Arrayfood,Document doc) {
+        for (int i = 0; i < count; i++) {
+
+            Element foodElement = doc.select("div[class=field-item field-item-" + Integer.toString(i) + "]").get(foodIndex);
+            System.out.println(foodElement.text());
+
+            Arrayfood.add(foodElement.text());
+        }
+    }
+
+        @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brody_square);
@@ -45,8 +56,11 @@ public class BrodySquareActivity extends Activity {
 
     private class Title extends AsyncTask<Void, Void, Void>{
         String BPBreakfastraw,BPLunchraw,BPDinnerraw,BPLateNightraw;
-        String BPLunchtxt;
+        String BPBreakfasttxt,BPLunchtxt,BPDinnertxt,BPLateNighttxt;
+        ArrayList<String> BPBreakfastArray = new ArrayList<String>();
         ArrayList<String> BPLunchArray = new ArrayList<String>();
+        ArrayList<String> BPDinnerArray = new ArrayList<String>();
+        ArrayList<String> BPLateNightArray = new ArrayList<String>();
 
 
 
@@ -79,16 +93,16 @@ public class BrodySquareActivity extends Activity {
                 int BPcountL = BPcounterL.size();
 
 
-                for (int i=0;i<BPcountL;i++){
-                    String temp = Integer.toString(i);
-                    Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
-                    System.out.println(BPLunchtxt.text());
+                //for (int i=0;i<BPcountL;i++){
+                    //String temp = Integer.toString(i);
+                    //Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
+                   // System.out.println(BPLunchtxt.text());
 
-                    BPLunchArray.add(BPLunchtxt.text());
+                 //   BPLunchArray.add(BPLunchtxt.text());
 
-                }
+               // }
 
-
+                foodArray(BPcountL,0,BPLunchArray,document);
 
 
 
