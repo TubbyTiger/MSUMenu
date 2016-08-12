@@ -45,8 +45,7 @@ public class BrodySquareActivity extends Activity {
 
     private class Title extends AsyncTask<Void, Void, Void>{
         String BPBreakfastraw,BPLunchraw,BPDinnerraw,BPLateNightraw;
-        String testing;
-        String BPLunchtxt,BPLunchtxta;
+        String BPLunchtxt;
         ArrayList<String> BPLunchArray = new ArrayList<String>();
 
 
@@ -92,7 +91,8 @@ public class BrodySquareActivity extends Activity {
 
 
 
-                Element testing = document.select("div[class=field-item field-item-3]").get(0);
+
+
 
 
                 BPBreakfastraw = BPBreakfastElem.text();
@@ -117,9 +117,9 @@ public class BrodySquareActivity extends Activity {
 
             TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
             for (int k=0;k<BPLunchArray.size();k++){
-                System.out.println("HWEF");
+
                 String Temptxt = BPLunchArray.get(k);
-                BPLunch.append(Temptxt + "\n");
+                BPLunch.append(Temptxt + "\n"+"\n");
             }
 
 
