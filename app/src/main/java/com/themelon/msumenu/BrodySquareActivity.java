@@ -73,14 +73,13 @@ public class BrodySquareActivity extends Activity {
                 Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
                 Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
 
-                Elements counter = BPLunchElem.getElementsByTag("div");
 
 
+                Elements BPcounterL = BPLunchElem.getElementsByTag("div");
+                int BPcountL = BPcounterL.size();
 
-                int count = counter.size();
 
-
-                for (int i=0;i<count;i++){
+                for (int i=0;i<BPcountL;i++){
                     String temp = Integer.toString(i);
                     Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
                     System.out.println(BPLunchtxt.text());
