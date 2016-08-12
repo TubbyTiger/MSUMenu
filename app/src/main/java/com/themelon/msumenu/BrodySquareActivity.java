@@ -42,6 +42,12 @@ public class BrodySquareActivity extends Activity {
             Arrayfood.add(foodElement.text());
         }
     }
+    public void settingText(ArrayList<String> Arrayfood,TextView foodloc){
+        for (int k = 0; k<Arrayfood.size();k++){
+            String temptxt = Arrayfood.get(k);
+            foodloc.append(temptxt + "\n"+"\n");
+        }
+    }
 
         @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -129,12 +135,12 @@ public class BrodySquareActivity extends Activity {
             BPBreakfast.setText(BPBreakfastraw);
 
             TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
-            for (int k=0;k<BPLunchArray.size();k++){
+         //   for (int k=0;k<BPLunchArray.size();k++){
 
-                String Temptxt = BPLunchArray.get(k);
-                BPLunch.append(Temptxt + "\n"+"\n");
-            }
-
+           //     String Temptxt = BPLunchArray.get(k);
+             //   BPLunch.append(Temptxt + "\n"+"\n");
+            //}
+            settingText(BPLunchArray,BPLunch);
 
 
             TextView BPDinner = (TextView) findViewById(R.id.BPDinnerTxt);
