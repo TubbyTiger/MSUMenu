@@ -73,7 +73,7 @@ public class BrodySquareActivity extends Activity {
             }
 
         }
-        return null;
+        return foodLocArray.get(0);
     }
 
 
@@ -155,6 +155,7 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> VOLateNightArray = new ArrayList<String>();
 
         ArrayList<Integer> DolceArray = new ArrayList<Integer>();
+        ArrayList<Integer> BoilingPointArray = new ArrayList<Integer>();
 
         @Override
         protected void onPreExecute() {
@@ -186,7 +187,10 @@ public class BrodySquareActivity extends Activity {
                 Elements LateNight = document.select("td[class =views-field views-field-field-late-night-value]");
 
                 findIndex(all.size(),"Dolce", menuTitle, DolceArray);
+                findIndex(all.size(),"Boiling Point", menuTitle, BoilingPointArray);
+
                 int finalint = setIndex(DolceArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintB = setIndex(BoilingPointArray,Breakfast,Lunch,Dinner,LateNight);
 
 
 
@@ -194,10 +198,10 @@ public class BrodySquareActivity extends Activity {
                 //get html document title
                 // The first food elements are boiling point, 0
 
-                Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(0);
-                Element BPLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(0);
-                Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
-                Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
+                Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintB);
+                Element BPLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(finalintB);
+                Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(finalintB);
+                Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(finalintB);
 
 
 
