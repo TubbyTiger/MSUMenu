@@ -41,12 +41,47 @@ public class BrodySquareActivity extends Activity {
 
 
 
+
     public void settingText(ArrayList<String> Arrayfood,TextView foodloc){
         for (int k = 0; k<Arrayfood.size();k++){
             String temptxt = Arrayfood.get(k);
             foodloc.append(temptxt.trim() + "\n"+"\n");
         }
     }
+
+
+    public void findIndex(int total, String foodLoc, Elements menuTitle,ArrayList<Integer> foodLocArray){
+
+        for( int i=0;i<total;i++){
+            if(foodLoc.equals(menuTitle.get(i).child(0).text())) {
+                foodLocArray.add(i);
+
+            }
+        }
+    }
+
+
+
+    public Integer setIndex(ArrayList<Integer> foodLocArray, Elements mealCountBCheck, Elements mealCountLCheck, Elements mealCountDCheck, Elements mealCountLNCheck ){
+        if (foodLocArray.size()>1){
+            if ((mealCountBCheck.get(foodLocArray.get(0)).childNodeSize()+ mealCountLCheck.get(foodLocArray.get(0)).childNodeSize() + mealCountDCheck.get(foodLocArray.get(0)).childNodeSize()
+                    + mealCountLNCheck.get(foodLocArray.get(0)).childNodeSize()) > (mealCountBCheck.get(foodLocArray.get(1)).childNodeSize()+ mealCountLCheck.get(foodLocArray.get(1)).childNodeSize()
+                    + mealCountDCheck.get(foodLocArray.get(1)).childNodeSize() + mealCountLNCheck.get(foodLocArray.get(1)).childNodeSize())){
+                return foodLocArray.get(0);
+            }else{
+                return foodLocArray.get(1);
+            }
+
+        }
+        return null;
+    }
+
+
+
+
+
+
+
 
         @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -119,6 +154,8 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> VODinnerArray = new ArrayList<String>();
         ArrayList<String> VOLateNightArray = new ArrayList<String>();
 
+        ArrayList<Integer> DolceArray = new ArrayList<Integer>();
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -135,12 +172,35 @@ public class BrodySquareActivity extends Activity {
                 // Connect to website
                 Document document = Jsoup.connect(url).get();
 
+                Elements menuTitle = document.select("table[class=views-table cols-4]");
+
+                Elements all = document.select("[class=views-table cols-4]");
+
+
+
+
+
+                Elements Breakfast = document.select("td[class=views-field views-field-field-breakfast-menu-value]");
+                Elements Lunch = document.select("td[class =views-field views-field-field-lunch-menu-value]");
+                Elements Dinner = document.select("td[class =views-field views-field-field-dinner-menu-value]");
+                Elements LateNight = document.select("td[class =views-field views-field-field-late-night-value]");
+
+                findIndex(all.size(),"Dolce", menuTitle, DolceArray);
+                int finalint = setIndex(DolceArray,Breakfast,Lunch,Dinner,LateNight);
+
+
+
+
                 //get html document title
                 // The first food elements are boiling point, 0
+
                 Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(0);
                 Element BPLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(0);
                 Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
                 Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
+
+
+
 
                 Element BGBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(1);
                 Element BGLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(1);
@@ -158,10 +218,10 @@ public class BrodySquareActivity extends Activity {
                 Element COLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(3);
 
 
-                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(4);
-                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(4);
-                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(4);
-                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(4);
+                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalint);
+                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(finalint);
+                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(finalint);
+                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(finalint);
 
 
 
@@ -194,6 +254,11 @@ public class BrodySquareActivity extends Activity {
                 Element VOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(9);
                 Element VODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(9);
                 Element VOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(9);
+
+
+
+
+
 
 
                 Elements BPcounterB = BPBreakfastElem.getElementsByTag("div");
@@ -309,13 +374,13 @@ public class BrodySquareActivity extends Activity {
 
 
                 Elements STcounterB = STBreakfastElem.getElementsByTag("div");
-                int STcountB = HOcounterB.size();
+                int STcountB = STcounterB.size();
 
                 Elements STcounterL = STLunchElem.getElementsByTag("div");
                 int STcountL = STcounterL.size();
 
                 Elements STcounterD = HODinnerElem.getElementsByTag("div");
-                int STcountD = HOcounterD.size();
+                int STcountD = STcounterD.size();
 
                 Elements STcounterLN = HOLateNightElem.getElementsByTag("div");
                 int STcountLN = STcounterLN.size();
