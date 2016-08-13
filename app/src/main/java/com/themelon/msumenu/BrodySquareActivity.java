@@ -77,6 +77,12 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> CADinnerArray = new ArrayList<String>();
         ArrayList<String> CALateNightArray = new ArrayList<String>();
 
+        ArrayList<String> DOBreakfastArray = new ArrayList<String>();
+        ArrayList<String> DOLunchArray = new ArrayList<String>();
+        ArrayList<String> DODinnerArray = new ArrayList<String>();
+        ArrayList<String> DOLateNightArray = new ArrayList<String>();
+
+
 
 
 
@@ -114,7 +120,10 @@ public class BrodySquareActivity extends Activity {
                 Element CADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(2);
                 Element CALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(2);
 
-
+                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(3);
+                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(3);
+                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(3);
+                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(3);
 
 
 
@@ -160,6 +169,17 @@ public class BrodySquareActivity extends Activity {
                 int CAcountLN = CAcounterLN.size();
 
 
+                Elements DOcounterB = DOBreakfastElem.getElementsByTag("div");
+                int DOcountB = DOcounterB.size();
+
+                Elements DOcounterL = DOLunchElem.getElementsByTag("div");
+                int DOcountL = DOcounterL.size();
+
+                Elements DOcounterD = DODinnerElem.getElementsByTag("div");
+                int DOcountD = DOcounterD.size();
+
+                Elements DOcounterLN = DOLateNightElem.getElementsByTag("div");
+                int DOcountLN = DOcounterLN.size();
 
 
 
@@ -194,7 +214,10 @@ public class BrodySquareActivity extends Activity {
                 foodArray(CAcountLN,CALateNightArray,CALateNightElem);
 
 
-
+                foodArray(DOcountB,DOBreakfastArray,DOBreakfastElem);
+                foodArray(DOcountL,DOLunchArray,DOLunchElem);
+                foodArray(DOcountD,DODinnerArray,DODinnerElem);
+                foodArray(DOcountLN,DOLateNightArray,DOLateNightElem);
 
             }
                 catch (IOException e) {
@@ -251,6 +274,21 @@ public class BrodySquareActivity extends Activity {
             settingText(CALateNightArray,CALateNight);
             mProgressDialog.dismiss();
 
+
+
+
+            TextView DOBreakfast = (TextView)findViewById(R.id.DOBreakfasttxt);
+            settingText(DOBreakfastArray,DOBreakfast);
+
+            TextView DOLunch = (TextView)findViewById(R.id.DOLunchTxt);
+            settingText(DOLunchArray,DOLunch);
+
+            TextView DODinner = (TextView) findViewById(R.id.DODinnerTxt);
+            settingText(DODinnerArray,DODinner);
+
+            TextView DOLateNight = (TextView) findViewById(R.id.DOLateNightTxt);
+            settingText(DOLateNightArray,DOLateNight);
+            mProgressDialog.dismiss();
         }
 
     }
