@@ -250,6 +250,7 @@ public class BrodySquareActivity extends Activity {
             TextView CALateNight = (TextView) findViewById(R.id.CALateNightTxt);
             settingText(CALateNightArray,CALateNight);
             mProgressDialog.dismiss();
+
         }
 
     }
