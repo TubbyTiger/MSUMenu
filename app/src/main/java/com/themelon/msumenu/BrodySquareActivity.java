@@ -232,7 +232,6 @@ public class BrodySquareActivity extends Activity {
                 int finalintST = setIndex(StacksArray,Breakfast,Lunch,Dinner,LateNight);
                 int finalintVO = setIndex(VegOutArray,Breakfast,Lunch,Dinner,LateNight);
 
-                System.out.println(PangeaArray.get(0));
 
 
 
@@ -283,29 +282,38 @@ public class BrodySquareActivity extends Activity {
                 Element HOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintHO);
 
 
-                Element PABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(6);
-                Element PALunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(6);
-                Element PADinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(6);
-                Element PALateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(6);
 
-
-                Element SSBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(7);
-                Element SSLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(7);
-                Element SSDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(7);
-                Element SSLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(7);
+                // IDK WHY BUT I HAD TO RENAME ALL THESE ELEMENTS FOR IT TO PARSE. LOOK INTO THIS LATER
+                Element PABreakfastEle = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintPA);
+                Element PALunchEle = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintPA);
+                Element PADinnerEle = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintPA);
+                Element PALateNightEle = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintPA);
 
 
 
-                Element STBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(8);
-                Element STLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(8);
-                Element STDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(8);
-                Element STLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(8);
 
 
-                Element VOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(9);
-                Element VOLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(9);
-                Element VODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(9);
-                Element VOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(9);
+
+
+
+                Element SSBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintSS);
+                Element SSLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintSS);
+                Element SSDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintSS);
+                Element SSLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintSS);
+
+
+                // IDK WHY BUT I HAD TO RENAME ALL THESE ELEMENTS FOR IT TO PARSE. LOOK INTO THIS LATER
+
+                Element STBreakfastEle = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintST);
+                Element STLunchEle = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintST);
+                Element STDinnerEle = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintST);
+                Element STLateNightEle = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintST);
+
+
+                Element VOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintVO);
+                Element VOLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintVO);
+                Element VODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintVO);
+                Element VOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintVO);
 
 
 
@@ -397,16 +405,16 @@ public class BrodySquareActivity extends Activity {
                 int HOcountLN = HOcounterLN.size();
 
 
-                Elements PAcounterB = PABreakfastElem.getElementsByTag("div");
+                Elements PAcounterB = PABreakfastEle.getElementsByTag("div");
                 int PAcountB = PAcounterB.size();
 
-                Elements PAcounterL = PALunchElem.getElementsByTag("div");
+                Elements PAcounterL = PALunchEle.getElementsByTag("div");
                 int PAcountL = PAcounterL.size();
 
-                Elements PAcounterD = PADinnerElem.getElementsByTag("div");
+                Elements PAcounterD = PADinnerEle.getElementsByTag("div");
                 int PAcountD = PAcounterD.size();
 
-                Elements PAcounterLN = PALateNightElem.getElementsByTag("div");
+                Elements PAcounterLN = PALateNightEle.getElementsByTag("div");
                 int PAcountLN = PAcounterLN.size();
 
 
@@ -425,16 +433,16 @@ public class BrodySquareActivity extends Activity {
 
 
 
-                Elements STcounterB = STBreakfastElem.getElementsByTag("div");
+                Elements STcounterB = STBreakfastEle.getElementsByTag("div");
                 int STcountB = STcounterB.size();
 
-                Elements STcounterL = STLunchElem.getElementsByTag("div");
+                Elements STcounterL = STLunchEle.getElementsByTag("div");
                 int STcountL = STcounterL.size();
 
-                Elements STcounterD = HODinnerElem.getElementsByTag("div");
+                Elements STcounterD = STDinnerEle.getElementsByTag("div");
                 int STcountD = STcounterD.size();
 
-                Elements STcounterLN = HOLateNightElem.getElementsByTag("div");
+                Elements STcounterLN = STLateNightEle.getElementsByTag("div");
                 int STcountLN = STcounterLN.size();
 
 
@@ -502,10 +510,10 @@ public class BrodySquareActivity extends Activity {
 
 
 
-                foodArray(PAcountB,PABreakfastArray,DOBreakfastElem);
-                foodArray(PAcountL,PALunchArray,DOLunchElem);
-                foodArray(PAcountD,PADinnerArray,DODinnerElem);
-                foodArray(PAcountLN,PALateNightArray,DOLateNightElem);
+                foodArray(PAcountB,PABreakfastArray,PABreakfastEle);
+                foodArray(PAcountL,PALunchArray,PALunchEle);
+                foodArray(PAcountD,PADinnerArray,PADinnerEle);
+                foodArray(PAcountLN,PALateNightArray,PALateNightEle);
 
 
                 foodArray(SScountB,SSBreakfastArray,SSBreakfastElem);
@@ -515,10 +523,10 @@ public class BrodySquareActivity extends Activity {
 
 
 
-                foodArray(STcountB,STBreakfastArray,STBreakfastElem);
-                foodArray(STcountL,STLunchArray,STLunchElem);
-                foodArray(STcountD,STDinnerArray,STDinnerElem);
-                foodArray(STcountLN,STLateNightArray,STLateNightElem);
+                foodArray(STcountB,STBreakfastArray,STBreakfastEle);
+                foodArray(STcountL,STLunchArray,STLunchEle);
+                foodArray(STcountD,STDinnerArray,STDinnerEle);
+                foodArray(STcountLN,STLateNightArray,STLateNightEle);
 
 
 
