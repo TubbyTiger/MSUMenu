@@ -156,6 +156,23 @@ public class BrodySquareActivity extends Activity {
 
         ArrayList<Integer> DolceArray = new ArrayList<Integer>();
         ArrayList<Integer> BoilingPointArray = new ArrayList<Integer>();
+        ArrayList<Integer> BrimstoneGrilleArray = new ArrayList<Integer>();
+        ArrayList<Integer> CayennesArray = new ArrayList<Integer>();
+        ArrayList<Integer> CiaoArray = new ArrayList<Integer>();
+        ArrayList<Integer> HomestyleArray = new ArrayList<Integer>();
+        ArrayList<Integer> PangeaArray = new ArrayList<Integer>();
+        ArrayList<Integer> SaladAndSushiArray = new ArrayList<Integer>();
+        ArrayList<Integer> StacksArray = new ArrayList<Integer>();
+        ArrayList<Integer> VegOutArray = new ArrayList<Integer>();
+
+
+
+
+
+
+
+
+
 
         @Override
         protected void onPreExecute() {
@@ -182,15 +199,46 @@ public class BrodySquareActivity extends Activity {
 
 
                 Elements Breakfast = document.select("td[class=views-field views-field-field-breakfast-menu-value]");
-                Elements Lunch = document.select("td[class =views-field views-field-field-lunch-menu-value]");
-                Elements Dinner = document.select("td[class =views-field views-field-field-dinner-menu-value]");
-                Elements LateNight = document.select("td[class =views-field views-field-field-late-night-value]");
+                Elements Lunch = document.select("td[class=views-field views-field-field-lunch-menu-value]");
+                Elements Dinner = document.select("td[class=views-field views-field-field-dinner-menu-value]");
+                Elements LateNight = document.select("td[class=views-field views-field-field-late-night-value]");
 
                 findIndex(all.size(),"Dolce", menuTitle, DolceArray);
                 findIndex(all.size(),"Boiling Point", menuTitle, BoilingPointArray);
+                findIndex(all.size(),"Brimstone Grille", menuTitle, BrimstoneGrilleArray);
+                findIndex(all.size(),"Cayenne's", menuTitle, CayennesArray);
+                findIndex(all.size(),"Ciao", menuTitle, CiaoArray);
+                findIndex(all.size(),"Homestyle", menuTitle, HomestyleArray);
+                findIndex(all.size(),"Pangea", menuTitle, PangeaArray);
+                findIndex(all.size(),"S2: Salad and Sushi", menuTitle, SaladAndSushiArray);
+                findIndex(all.size(),"Stacks", menuTitle, StacksArray);
+                findIndex(all.size(),"Veg Out", menuTitle, VegOutArray);
 
-                int finalint = setIndex(DolceArray,Breakfast,Lunch,Dinner,LateNight);
-                int finalintB = setIndex(BoilingPointArray,Breakfast,Lunch,Dinner,LateNight);
+
+
+
+
+
+
+
+                int finalintDO = setIndex(DolceArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintBP = setIndex(BoilingPointArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintBG = setIndex(BrimstoneGrilleArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintCA = setIndex(CayennesArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintCO = setIndex(CiaoArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintHO = setIndex(HomestyleArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintPA = setIndex(PangeaArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintSS = setIndex(SaladAndSushiArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintST = setIndex(StacksArray,Breakfast,Lunch,Dinner,LateNight);
+                int finalintVO = setIndex(VegOutArray,Breakfast,Lunch,Dinner,LateNight);
+
+                System.out.println(PangeaArray.get(0));
+
+
+
+
+
+
 
 
 
@@ -198,66 +246,66 @@ public class BrodySquareActivity extends Activity {
                 //get html document title
                 // The first food elements are boiling point, 0
 
-                Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintB);
-                Element BPLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(finalintB);
-                Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(finalintB);
-                Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(finalintB);
+                Element BPBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintBP);
+                Element BPLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintBP);
+                Element BPDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintBP);
+                Element BPLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintBP);
 
 
 
 
-                Element BGBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(1);
-                Element BGLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(1);
-                Element BGDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(1);
-                Element BGLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(1);
+                Element BGBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintBG);
+                Element BGLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintBG);
+                Element BGDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintBG);
+                Element BGLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintBG);
 
-                Element CABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(2);
-                Element CALunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(2);
-                Element CADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(2);
-                Element CALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(2);
+                Element CABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintCA);
+                Element CALunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintCA);
+                Element CADinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintCA);
+                Element CALateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintCA);
 
-                Element COBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(3);
-                Element COLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(3);
-                Element CODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(3);
-                Element COLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(3);
-
-
-                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalint);
-                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(finalint);
-                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(finalint);
-                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(finalint);
+                Element COBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintCO);
+                Element COLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintCO);
+                Element CODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintCO);
+                Element COLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintCO);
 
 
+                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintDO);
+                Element DOLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintDO);
+                Element DODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintDO);
+                Element DOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintDO);
 
-                Element HOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(5);
-                Element HOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(5);
-                Element HODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(5);
-                Element HOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(5);
+
+
+                Element HOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(finalintHO);
+                Element HOLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(finalintHO);
+                Element HODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(finalintHO);
+                Element HOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(finalintHO);
 
 
                 Element PABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(6);
-                Element PALunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(6);
-                Element PADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(6);
-                Element PALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(6);
+                Element PALunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(6);
+                Element PADinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(6);
+                Element PALateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(6);
 
 
                 Element SSBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(7);
-                Element SSLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(7);
-                Element SSDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(7);
-                Element SSLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(7);
+                Element SSLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(7);
+                Element SSDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(7);
+                Element SSLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(7);
 
 
 
                 Element STBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(8);
-                Element STLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(8);
-                Element STDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(8);
-                Element STLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(8);
+                Element STLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(8);
+                Element STDinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(8);
+                Element STLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(8);
 
 
                 Element VOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(9);
-                Element VOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(9);
-                Element VODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(9);
-                Element VOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(9);
+                Element VOLunchElem = document.select("td[class=views-field views-field-field-lunch-menu-value]").get(9);
+                Element VODinnerElem = document.select("td[class=views-field views-field-field-dinner-menu-value]").get(9);
+                Element VOLateNightElem = document.select("td[class=views-field views-field-field-late-night-value]").get(9);
 
 
 
