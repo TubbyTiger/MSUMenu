@@ -77,6 +77,11 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> CADinnerArray = new ArrayList<String>();
         ArrayList<String> CALateNightArray = new ArrayList<String>();
 
+        ArrayList<String> COBreakfastArray = new ArrayList<String>();
+        ArrayList<String> COLunchArray = new ArrayList<String>();
+        ArrayList<String> CODinnerArray = new ArrayList<String>();
+        ArrayList<String> COLateNightArray = new ArrayList<String>();
+
         ArrayList<String> DOBreakfastArray = new ArrayList<String>();
         ArrayList<String> DOLunchArray = new ArrayList<String>();
         ArrayList<String> DODinnerArray = new ArrayList<String>();
@@ -120,10 +125,16 @@ public class BrodySquareActivity extends Activity {
                 Element CADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(2);
                 Element CALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(2);
 
-                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(3);
-                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(3);
-                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(3);
-                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(3);
+                Element COBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(3);
+                Element COLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(3);
+                Element CODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(3);
+                Element COLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(3);
+
+
+                Element DOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(4);
+                Element DOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(4);
+                Element DODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(4);
+                Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(4);
 
 
 
@@ -169,6 +180,20 @@ public class BrodySquareActivity extends Activity {
                 int CAcountLN = CAcounterLN.size();
 
 
+                Elements COcounterB = COBreakfastElem.getElementsByTag("div");
+                int COcountB = COcounterB.size();
+
+                Elements COcounterL = COLunchElem.getElementsByTag("div");
+                int COcountL = COcounterL.size();
+
+                Elements COcounterD = CODinnerElem.getElementsByTag("div");
+                int COcountD = COcounterD.size();
+
+                Elements COcounterLN = COLateNightElem.getElementsByTag("div");
+                int COcountLN = COcounterLN.size();
+
+
+
                 Elements DOcounterB = DOBreakfastElem.getElementsByTag("div");
                 int DOcountB = DOcounterB.size();
 
@@ -212,6 +237,13 @@ public class BrodySquareActivity extends Activity {
                 foodArray(CAcountL,CALunchArray,CALunchElem);
                 foodArray(CAcountD,CADinnerArray,CADinnerElem);
                 foodArray(CAcountLN,CALateNightArray,CALateNightElem);
+
+
+
+                foodArray(COcountB,COBreakfastArray,COBreakfastElem);
+                foodArray(COcountL,COLunchArray,COLunchElem);
+                foodArray(COcountD,CODinnerArray,CODinnerElem);
+                foodArray(COcountLN,COLateNightArray,COLateNightElem);
 
 
                 foodArray(DOcountB,DOBreakfastArray,DOBreakfastElem);
@@ -272,7 +304,21 @@ public class BrodySquareActivity extends Activity {
 
             TextView CALateNight = (TextView) findViewById(R.id.CALateNightTxt);
             settingText(CALateNightArray,CALateNight);
-            mProgressDialog.dismiss();
+
+
+
+
+            TextView COBreakfast = (TextView)findViewById(R.id.COBreakfasttxt);
+            settingText(COBreakfastArray,COBreakfast);
+
+            TextView COLunch = (TextView)findViewById(R.id.COLunchTxt);
+            settingText(COLunchArray,COLunch);
+
+            TextView CODinner = (TextView) findViewById(R.id.CODinnerTxt);
+            settingText(CODinnerArray,CODinner);
+
+            TextView COLateNight = (TextView) findViewById(R.id.COLateNightTxt);
+            settingText(COLateNightArray,COLateNight);
 
 
 
