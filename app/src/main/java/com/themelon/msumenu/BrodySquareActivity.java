@@ -25,12 +25,16 @@ public class BrodySquareActivity extends Activity {
 
 
     public void foodArray(int count, ArrayList<String> Arrayfood,Element mealElement) {
-        for (int i = 0; i < count; i++) {
+        if (count==0){
+            Arrayfood.add(mealElement.text());
+        } else {
+            for (int i = 0; i < count; i++) {
 
-            Element foodElement = mealElement.child(i);
+                Element foodElement = mealElement.child(i);
 
 
-            Arrayfood.add(foodElement.text());
+                Arrayfood.add(foodElement.text());
+            }
         }
     }
 
@@ -40,7 +44,7 @@ public class BrodySquareActivity extends Activity {
     public void settingText(ArrayList<String> Arrayfood,TextView foodloc){
         for (int k = 0; k<Arrayfood.size();k++){
             String temptxt = Arrayfood.get(k);
-            foodloc.append(temptxt + "\n"+"\n");
+            foodloc.append(temptxt.trim() + "\n"+"\n");
         }
     }
 
@@ -117,6 +121,7 @@ public class BrodySquareActivity extends Activity {
                 int BPcountLN = BPcounterLN.size();
 
 
+
                 Elements BGcounterB = BGBreakfastElem.getElementsByTag("div");
                 int BGcountB = BGcounterB.size();
 
@@ -124,11 +129,11 @@ public class BrodySquareActivity extends Activity {
                 int BGcountL = BGcounterL.size();
 
 
-         //       Elements BGcounterD = BGDinnerElem.getElementsByTag("div");
-           //     int BGcountD = BGcounterD.size();
+                Elements BGcounterD = BGDinnerElem.getElementsByTag("div");
+                int BGcountD = BGcounterD.size();
 
-       //         Elements BGcounterLN = BGLateNightElem.getElementsByTag("div");
-     //           int BGcountLN = BGcounterLN.size();
+                Elements BGcounterLN = BGLateNightElem.getElementsByTag("div");
+                int BGcountLN = BGcounterLN.size();
 
 
 
@@ -156,8 +161,8 @@ public class BrodySquareActivity extends Activity {
 
                 foodArray(BGcountB,BGBreakfastArray,BGBreakfastElem);
                 foodArray(BGcountL,BGLunchArray,BGLunchElem);
-              //  foodArray(BGcountD,1,BGDinnerArray,document);
-            //    foodArray(BGcountLN,1,BGLateNightArray,document);
+                foodArray(BGcountD,BGDinnerArray,BGDinnerElem);
+                foodArray(BGcountLN,BGLateNightArray,BGLateNightElem);
 
 
 
@@ -191,16 +196,16 @@ public class BrodySquareActivity extends Activity {
 
 
             TextView BGBreakfast = (TextView)findViewById(R.id.BGBreakfasttxt);
-          //  settingText(BGBreakfastArray,BGBreakfast);
+            settingText(BGBreakfastArray,BGBreakfast);
 
             TextView BGLunch = (TextView)findViewById(R.id.BGLunchTxt);
             settingText(BGLunchArray,BGLunch);
 
-//            TextView BGDinner = (TextView) findViewById(R.id.BGDinnerTxt);
-           // settingText(BGDinnerArray,BGDinner);
+            TextView BGDinner = (TextView) findViewById(R.id.BGDinnerTxt);
+            settingText(BGDinnerArray,BGDinner);
 
-         //   TextView BGLateNight = (TextView) findViewById(R.id.BGLateNightTxt);
-       //     settingText(BGLateNightArray,BGLateNight);
+            TextView BGLateNight = (TextView) findViewById(R.id.BGLateNightTxt);
+            settingText(BGLateNightArray,BGLateNight);
 
 
             mProgressDialog.dismiss();
