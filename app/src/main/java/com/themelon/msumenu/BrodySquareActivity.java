@@ -88,9 +88,36 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> DOLateNightArray = new ArrayList<String>();
 
 
+        ArrayList<String> HOBreakfastArray = new ArrayList<String>();
+        ArrayList<String> HOLunchArray = new ArrayList<String>();
+        ArrayList<String> HODinnerArray = new ArrayList<String>();
+        ArrayList<String> HOLateNightArray = new ArrayList<String>();
+
+
+        ArrayList<String> PABreakfastArray = new ArrayList<String>();
+        ArrayList<String> PALunchArray = new ArrayList<String>();
+        ArrayList<String> PADinnerArray = new ArrayList<String>();
+        ArrayList<String> PALateNightArray = new ArrayList<String>();
+
+
+        ArrayList<String> SSBreakfastArray = new ArrayList<String>();
+        ArrayList<String> SSLunchArray = new ArrayList<String>();
+        ArrayList<String> SSDinnerArray = new ArrayList<String>();
+        ArrayList<String> SSLateNightArray = new ArrayList<String>();
 
 
 
+        ArrayList<String> STBreakfastArray = new ArrayList<String>();
+        ArrayList<String> STLunchArray = new ArrayList<String>();
+        ArrayList<String> STDinnerArray = new ArrayList<String>();
+        ArrayList<String> STLateNightArray = new ArrayList<String>();
+
+
+
+        ArrayList<String> VOBreakfastArray = new ArrayList<String>();
+        ArrayList<String> VOLunchArray = new ArrayList<String>();
+        ArrayList<String> VODinnerArray = new ArrayList<String>();
+        ArrayList<String> VOLateNightArray = new ArrayList<String>();
 
         @Override
         protected void onPreExecute() {
@@ -137,6 +164,36 @@ public class BrodySquareActivity extends Activity {
                 Element DOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(4);
 
 
+
+                Element HOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(5);
+                Element HOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(5);
+                Element HODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(5);
+                Element HOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(5);
+
+
+                Element PABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(6);
+                Element PALunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(6);
+                Element PADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(6);
+                Element PALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(6);
+
+
+                Element SSBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(7);
+                Element SSLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(7);
+                Element SSDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(7);
+                Element SSLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(7);
+
+
+
+                Element STBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(8);
+                Element STLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(8);
+                Element STDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(8);
+                Element STLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(8);
+
+
+                Element VOBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(9);
+                Element VOLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(9);
+                Element VODinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(9);
+                Element VOLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(9);
 
 
                 Elements BPcounterB = BPBreakfastElem.getElementsByTag("div");
@@ -210,6 +267,72 @@ public class BrodySquareActivity extends Activity {
 
 
 
+                Elements HOcounterB = HOBreakfastElem.getElementsByTag("div");
+                int HOcountB = HOcounterB.size();
+
+                Elements HOcounterL = HOLunchElem.getElementsByTag("div");
+                int HOcountL = HOcounterL.size();
+
+                Elements HOcounterD = HODinnerElem.getElementsByTag("div");
+                int HOcountD = HOcounterD.size();
+
+                Elements HOcounterLN = HOLateNightElem.getElementsByTag("div");
+                int HOcountLN = HOcounterLN.size();
+
+
+                Elements PAcounterB = PABreakfastElem.getElementsByTag("div");
+                int PAcountB = PAcounterB.size();
+
+                Elements PAcounterL = PALunchElem.getElementsByTag("div");
+                int PAcountL = PAcounterL.size();
+
+                Elements PAcounterD = PADinnerElem.getElementsByTag("div");
+                int PAcountD = PAcounterD.size();
+
+                Elements PAcounterLN = PALateNightElem.getElementsByTag("div");
+                int PAcountLN = PAcounterLN.size();
+
+
+
+                Elements SScounterB = SSBreakfastElem.getElementsByTag("div");
+                int SScountB = SScounterB.size();
+
+                Elements SScounterL = SSLunchElem.getElementsByTag("div");
+                int SScountL = SScounterL.size();
+
+                Elements SScounterD = SSDinnerElem.getElementsByTag("div");
+                int SScountD = SScounterD.size();
+
+                Elements SScounterLN = SSLateNightElem.getElementsByTag("div");
+                int SScountLN = SScounterLN.size();
+
+
+
+                Elements STcounterB = STBreakfastElem.getElementsByTag("div");
+                int STcountB = HOcounterB.size();
+
+                Elements STcounterL = STLunchElem.getElementsByTag("div");
+                int STcountL = STcounterL.size();
+
+                Elements STcounterD = HODinnerElem.getElementsByTag("div");
+                int STcountD = HOcounterD.size();
+
+                Elements STcounterLN = HOLateNightElem.getElementsByTag("div");
+                int STcountLN = STcounterLN.size();
+
+
+                Elements VOcounterB = VOBreakfastElem.getElementsByTag("div");
+                int VOcountB = VOcounterB.size();
+
+                Elements VOcounterL = VOLunchElem.getElementsByTag("div");
+                int VOcountL = VOcounterL.size();
+
+                Elements VOcounterD = VODinnerElem.getElementsByTag("div");
+                int VOcountD = VOcounterD.size();
+
+                Elements VOcounterLN = VOLateNightElem.getElementsByTag("div");
+                int VOcountLN = VOcounterLN.size();
+
                 //for (int i=0;i<BPcountL;i++){
                     //String temp = Integer.toString(i);
                     //Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
@@ -251,6 +374,41 @@ public class BrodySquareActivity extends Activity {
                 foodArray(DOcountD,DODinnerArray,DODinnerElem);
                 foodArray(DOcountLN,DOLateNightArray,DOLateNightElem);
 
+
+
+
+
+                foodArray(HOcountB,HOBreakfastArray,HOBreakfastElem);
+                foodArray(HOcountL,HOLunchArray,HOLunchElem);
+                foodArray(HOcountD,HODinnerArray,HODinnerElem);
+                foodArray(HOcountLN,HOLateNightArray,HOLateNightElem);
+
+
+
+                foodArray(PAcountB,PABreakfastArray,DOBreakfastElem);
+                foodArray(PAcountL,PALunchArray,DOLunchElem);
+                foodArray(PAcountD,PADinnerArray,DODinnerElem);
+                foodArray(PAcountLN,PALateNightArray,DOLateNightElem);
+
+
+                foodArray(SScountB,SSBreakfastArray,SSBreakfastElem);
+                foodArray(SScountL,SSLunchArray,SSLunchElem);
+                foodArray(SScountD,SSDinnerArray,SSDinnerElem);
+                foodArray(SScountLN,SSLateNightArray,SSLateNightElem);
+
+
+
+                foodArray(STcountB,STBreakfastArray,STBreakfastElem);
+                foodArray(STcountL,STLunchArray,STLunchElem);
+                foodArray(STcountD,STDinnerArray,STDinnerElem);
+                foodArray(STcountLN,STLateNightArray,STLateNightElem);
+
+
+
+                foodArray(VOcountB,VOBreakfastArray,VOBreakfastElem);
+                foodArray(VOcountL,VOLunchArray,VOLunchElem);
+                foodArray(VOcountD,VODinnerArray,VODinnerElem);
+                foodArray(VOcountLN,VOLateNightArray,VOLateNightElem);
             }
                 catch (IOException e) {
                     e.printStackTrace();
@@ -334,6 +492,87 @@ public class BrodySquareActivity extends Activity {
 
             TextView DOLateNight = (TextView) findViewById(R.id.DOLateNightTxt);
             settingText(DOLateNightArray,DOLateNight);
+
+
+
+
+            TextView HOBreakfast = (TextView)findViewById(R.id.HOBreakfasttxt);
+            settingText(HOBreakfastArray,HOBreakfast);
+
+            TextView HOLunch = (TextView)findViewById(R.id.HOLunchTxt);
+            settingText(HOLunchArray,HOLunch);
+
+            TextView HODinner = (TextView) findViewById(R.id.HODinnerTxt);
+            settingText(HODinnerArray,HODinner);
+
+            TextView HOLateNight = (TextView) findViewById(R.id.HOLateNightTxt);
+            settingText(HOLateNightArray,HOLateNight);
+
+
+
+            TextView PABreakfast = (TextView)findViewById(R.id.PABreakfasttxt);
+            settingText(PABreakfastArray,PABreakfast);
+
+            TextView PALunch = (TextView)findViewById(R.id.PALunchTxt);
+            settingText(PALunchArray,PALunch);
+
+            TextView PADinner = (TextView) findViewById(R.id.PADinnerTxt);
+            settingText(PADinnerArray,PADinner);
+
+            TextView PALateNight = (TextView) findViewById(R.id.PALateNightTxt);
+            settingText(PALateNightArray,PALateNight);
+
+
+            TextView SSBreakfast = (TextView)findViewById(R.id.SSBreakfasttxt);
+            settingText(SSBreakfastArray,SSBreakfast);
+
+            TextView SSLunch = (TextView)findViewById(R.id.SSLunchTxt);
+            settingText(SSLunchArray,SSLunch);
+
+            TextView SSDinner = (TextView) findViewById(R.id.SSDinnerTxt);
+            settingText(SSDinnerArray,SSDinner);
+
+            TextView SSLateNight = (TextView) findViewById(R.id.SSLateNightTxt);
+            settingText(SSLateNightArray,SSLateNight);
+
+
+            TextView STBreakfast = (TextView)findViewById(R.id.STBreakfasttxt);
+            settingText(STBreakfastArray,STBreakfast);
+
+            TextView STLunch = (TextView)findViewById(R.id.STLunchTxt);
+            settingText(STLunchArray,STLunch);
+
+            TextView STDinner = (TextView) findViewById(R.id.STDinnerTxt);
+            settingText(STDinnerArray,STDinner);
+
+            TextView STLateNight = (TextView) findViewById(R.id.STLateNightTxt);
+            settingText(STLateNightArray,STLateNight);
+
+
+
+
+            TextView VOBreakfast = (TextView)findViewById(R.id.VOBreakfasttxt);
+            settingText(VOBreakfastArray,VOBreakfast);
+
+            TextView VOLunch = (TextView)findViewById(R.id.VOLunchTxt);
+            settingText(VOLunchArray,VOLunch);
+
+            TextView VODinner = (TextView) findViewById(R.id.VODinnerTxt);
+            settingText(VODinnerArray,VODinner);
+
+            TextView VOLateNight = (TextView) findViewById(R.id.VOLateNightTxt);
+            settingText(VOLateNightArray,VOLateNight);
+
+
+
+
+
+
+
+
+
+
+
             mProgressDialog.dismiss();
         }
 
