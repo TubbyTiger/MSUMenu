@@ -66,10 +66,16 @@ public class BrodySquareActivity extends Activity {
         ArrayList<String> BPLunchArray = new ArrayList<String>();
         ArrayList<String> BPDinnerArray = new ArrayList<String>();
         ArrayList<String> BPLateNightArray = new ArrayList<String>();
+
         ArrayList<String> BGBreakfastArray = new ArrayList<String>();
         ArrayList<String> BGLunchArray = new ArrayList<String>();
         ArrayList<String> BGDinnerArray = new ArrayList<String>();
         ArrayList<String> BGLateNightArray = new ArrayList<String>();
+
+        ArrayList<String> CABreakfastArray = new ArrayList<String>();
+        ArrayList<String> CALunchArray = new ArrayList<String>();
+        ArrayList<String> CADinnerArray = new ArrayList<String>();
+        ArrayList<String> CALateNightArray = new ArrayList<String>();
 
 
 
@@ -103,6 +109,11 @@ public class BrodySquareActivity extends Activity {
                 Element BGDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(1);
                 Element BGLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(1);
 
+                Element CABreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(2);
+                Element CALunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(2);
+                Element CADinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(2);
+                Element CALateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(2);
+
 
 
 
@@ -128,13 +139,25 @@ public class BrodySquareActivity extends Activity {
                 Elements BGcounterL = BGLunchElem.getElementsByTag("div");
                 int BGcountL = BGcounterL.size();
 
-
                 Elements BGcounterD = BGDinnerElem.getElementsByTag("div");
                 int BGcountD = BGcounterD.size();
 
                 Elements BGcounterLN = BGLateNightElem.getElementsByTag("div");
                 int BGcountLN = BGcounterLN.size();
 
+
+
+                Elements CAcounterB = CABreakfastElem.getElementsByTag("div");
+                int CAcountB = CAcounterB.size();
+
+                Elements CAcounterL = CALunchElem.getElementsByTag("div");
+                int CAcountL = CAcounterL.size();
+
+                Elements CAcounterD = CADinnerElem.getElementsByTag("div");
+                int CAcountD = CAcounterD.size();
+
+                Elements CAcounterLN = CALateNightElem.getElementsByTag("div");
+                int CAcountLN = CAcounterLN.size();
 
 
 
@@ -152,7 +175,6 @@ public class BrodySquareActivity extends Activity {
                // }
 
                 foodArray(BPcountB,BPBreakfastArray,BPBreakfastElem);
-
                 foodArray(BPcountL,BPLunchArray,BPLunchElem);
                 foodArray(BPcountD,BPDinnerArray,BPDinnerElem);
                 foodArray(BPcountLN,BPLateNightArray,BPLateNightElem);
@@ -163,6 +185,13 @@ public class BrodySquareActivity extends Activity {
                 foodArray(BGcountL,BGLunchArray,BGLunchElem);
                 foodArray(BGcountD,BGDinnerArray,BGDinnerElem);
                 foodArray(BGcountLN,BGLateNightArray,BGLateNightElem);
+
+
+
+                foodArray(CAcountB,CABreakfastArray,CABreakfastElem);
+                foodArray(CAcountL,CALunchArray,CALunchElem);
+                foodArray(CAcountD,CADinnerArray,CADinnerElem);
+                foodArray(CAcountLN,CALateNightArray,CALateNightElem);
 
 
 
@@ -208,6 +237,18 @@ public class BrodySquareActivity extends Activity {
             settingText(BGLateNightArray,BGLateNight);
 
 
+
+            TextView CABreakfast = (TextView)findViewById(R.id.CABreakfasttxt);
+            settingText(CABreakfastArray,CABreakfast);
+
+            TextView CALunch = (TextView)findViewById(R.id.CALunchTxt);
+            settingText(CALunchArray,CALunch);
+
+            TextView CADinner = (TextView) findViewById(R.id.CADinnerTxt);
+            settingText(CADinnerArray,CADinner);
+
+            TextView CALateNight = (TextView) findViewById(R.id.CALateNightTxt);
+            settingText(CALateNightArray,CALateNight);
             mProgressDialog.dismiss();
         }
 
