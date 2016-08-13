@@ -1,27 +1,18 @@
 package com.themelon.msumenu;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.jsoup.select.Evaluator;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.Html;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -33,15 +24,19 @@ public class BrodySquareActivity extends Activity {
 
 
 
-    public void foodArray(int count, int foodIndex, ArrayList<String> Arrayfood,Document doc) {
+    public void foodArray(int count, ArrayList<String> Arrayfood,Element mealElement) {
         for (int i = 0; i < count; i++) {
 
-            Element foodElement = doc.select("div[class=field-item field-item-" + Integer.toString(i) + "]").get(foodIndex);
-            System.out.println(foodElement.text());
+            Element foodElement = mealElement.child(i);
+
 
             Arrayfood.add(foodElement.text());
         }
     }
+
+
+
+
     public void settingText(ArrayList<String> Arrayfood,TextView foodloc){
         for (int k = 0; k<Arrayfood.size();k++){
             String temptxt = Arrayfood.get(k);
@@ -61,12 +56,18 @@ public class BrodySquareActivity extends Activity {
 
 
     private class Title extends AsyncTask<Void, Void, Void>{
-        String BPBreakfastraw,BPLunchraw,BPDinnerraw,BPLateNightraw;
-        String BPBreakfasttxt,BPLunchtxt,BPDinnertxt,BPLateNighttxt;
+
+
         ArrayList<String> BPBreakfastArray = new ArrayList<String>();
         ArrayList<String> BPLunchArray = new ArrayList<String>();
         ArrayList<String> BPDinnerArray = new ArrayList<String>();
         ArrayList<String> BPLateNightArray = new ArrayList<String>();
+        ArrayList<String> BGBreakfastArray = new ArrayList<String>();
+        ArrayList<String> BGLunchArray = new ArrayList<String>();
+        ArrayList<String> BGDinnerArray = new ArrayList<String>();
+        ArrayList<String> BGLateNightArray = new ArrayList<String>();
+
+
 
 
 
@@ -93,10 +94,47 @@ public class BrodySquareActivity extends Activity {
                 Element BPDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(0);
                 Element BPLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(0);
 
+                Element BGBreakfastElem = document.select("td[class=views-field views-field-field-breakfast-menu-value]").get(1);
+                Element BGLunchElem = document.select("td[class =views-field views-field-field-lunch-menu-value]").get(1);
+                Element BGDinnerElem = document.select("td[class =views-field views-field-field-dinner-menu-value]").get(1);
+                Element BGLateNightElem = document.select("td[class =views-field views-field-field-late-night-value]").get(1);
 
+
+
+
+
+
+                Elements BPcounterB = BPBreakfastElem.getElementsByTag("div");
+                int BPcountB = BPcounterB.size();
 
                 Elements BPcounterL = BPLunchElem.getElementsByTag("div");
                 int BPcountL = BPcounterL.size();
+
+                Elements BPcounterD = BPDinnerElem.getElementsByTag("div");
+                int BPcountD = BPcounterD.size();
+
+                Elements BPcounterLN = BPLateNightElem.getElementsByTag("div");
+                int BPcountLN = BPcounterLN.size();
+
+
+                Elements BGcounterB = BGBreakfastElem.getElementsByTag("div");
+                int BGcountB = BGcounterB.size();
+
+                Elements BGcounterL = BGLunchElem.getElementsByTag("div");
+                int BGcountL = BGcounterL.size();
+
+
+         //       Elements BGcounterD = BGDinnerElem.getElementsByTag("div");
+           //     int BGcountD = BGcounterD.size();
+
+       //         Elements BGcounterLN = BGLateNightElem.getElementsByTag("div");
+     //           int BGcountLN = BGcounterLN.size();
+
+
+
+
+
+
 
 
                 //for (int i=0;i<BPcountL;i++){
@@ -108,16 +146,22 @@ public class BrodySquareActivity extends Activity {
 
                // }
 
-                foodArray(BPcountL,0,BPLunchArray,document);
+                foodArray(BPcountB,BPBreakfastArray,BPBreakfastElem);
+
+                foodArray(BPcountL,BPLunchArray,BPLunchElem);
+                foodArray(BPcountD,BPDinnerArray,BPDinnerElem);
+                foodArray(BPcountLN,BPLateNightArray,BPLateNightElem);
+
+
+
+                foodArray(BGcountB,BGBreakfastArray,BGBreakfastElem);
+                foodArray(BGcountL,BGLunchArray,BGLunchElem);
+              //  foodArray(BGcountD,1,BGDinnerArray,document);
+            //    foodArray(BGcountLN,1,BGLateNightArray,document);
 
 
 
 
-
-                BPBreakfastraw = BPBreakfastElem.text();
-                BPLunchraw = BPLunchElem.text();
-                BPDinnerraw = BPDinnerElem.text();
-                BPLateNightraw = BPLateNightElem.text();
             }
                 catch (IOException e) {
                     e.printStackTrace();
@@ -132,22 +176,31 @@ public class BrodySquareActivity extends Activity {
 
         //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
-            BPBreakfast.setText(BPBreakfastraw);
+            settingText(BPBreakfastArray,BPBreakfast);
 
-            TextView BPLunch = (TextView) findViewById(R.id.BPLunchTxt);
-         //   for (int k=0;k<BPLunchArray.size();k++){
-
-           //     String Temptxt = BPLunchArray.get(k);
-             //   BPLunch.append(Temptxt + "\n"+"\n");
-            //}
+            TextView BPLunch = (TextView)findViewById(R.id.BPLunchTxt);
             settingText(BPLunchArray,BPLunch);
 
 
             TextView BPDinner = (TextView) findViewById(R.id.BPDinnerTxt);
-            BPDinner.setText(BPDinnerraw);
+            settingText(BPDinnerArray,BPDinner);
 
             TextView BPLateNight = (TextView) findViewById(R.id.BPLateNightTxt);
-            BPLateNight.setText(BPLateNightraw);
+            settingText(BPLateNightArray,BPLateNight);
+
+
+
+            TextView BGBreakfast = (TextView)findViewById(R.id.BGBreakfasttxt);
+          //  settingText(BGBreakfastArray,BGBreakfast);
+
+            TextView BGLunch = (TextView)findViewById(R.id.BGLunchTxt);
+            settingText(BGLunchArray,BGLunch);
+
+//            TextView BGDinner = (TextView) findViewById(R.id.BGDinnerTxt);
+           // settingText(BGDinnerArray,BGDinner);
+
+         //   TextView BGLateNight = (TextView) findViewById(R.id.BGLateNightTxt);
+       //     settingText(BGLateNightArray,BGLateNight);
 
 
             mProgressDialog.dismiss();
