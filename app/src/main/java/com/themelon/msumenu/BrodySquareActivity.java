@@ -1,28 +1,31 @@
 package com.themelon.msumenu;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.widget.TextView;
+import java.io.IOException;
+import java.util.ArrayList;
 
-
-public class BrodySquareActivity extends Activity {
-
-
+public class BrodySquareActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
     String url = "https://eatatstate.com/menus/brody";
     ProgressDialog mProgressDialog;
-
-
 
     public void foodArray(int count, ArrayList<String> Arrayfood,Element mealElement) {
         if (count==0){
@@ -78,23 +81,107 @@ public class BrodySquareActivity extends Activity {
 
 
 
-
-
-
-
-
-        @Override
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_brody_square);
+        setContentView(R.layout.activity_brodysquare);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         new Title().execute();
+
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
 
 
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
-    private class Title extends AsyncTask<Void, Void, Void>{
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.brodysquare, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(BrodySquareActivity.this, MainActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private class Title extends AsyncTask<Void, Void, Void> {
 
 
         ArrayList<String> BPBreakfastArray = new ArrayList<String>();
@@ -459,13 +546,13 @@ public class BrodySquareActivity extends Activity {
                 int VOcountLN = VOcounterLN.size();
 
                 //for (int i=0;i<BPcountL;i++){
-                    //String temp = Integer.toString(i);
-                    //Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
-                   // System.out.println(BPLunchtxt.text());
+                //String temp = Integer.toString(i);
+                //Element BPLunchtxt = document.select("div[class=field-item field-item-"+temp+"]").get(0);
+                // System.out.println(BPLunchtxt.text());
 
-                 //   BPLunchArray.add(BPLunchtxt.text());
+                //   BPLunchArray.add(BPLunchtxt.text());
 
-               // }
+                // }
 
                 foodArray(BPcountB,BPBreakfastArray,BPBreakfastElem);
                 foodArray(BPcountL,BPLunchArray,BPLunchElem);
@@ -535,10 +622,10 @@ public class BrodySquareActivity extends Activity {
                 foodArray(VOcountD,VODinnerArray,VODinnerElem);
                 foodArray(VOcountLN,VOLateNightArray,VOLateNightElem);
             }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return null;
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
 
 
         }
@@ -546,7 +633,7 @@ public class BrodySquareActivity extends Activity {
         @Override
         protected void onPostExecute(Void result) {
 
-        //     Set description into TextView
+            //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
             settingText(BPBreakfastArray,BPBreakfast);
 
