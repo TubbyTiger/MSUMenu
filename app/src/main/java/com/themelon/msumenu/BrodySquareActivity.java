@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,9 +25,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 
-public class BrodySquareActivity extends AppCompatActivity {
+public class BrodySquareActivity extends AppCompatActivity
+implements FirstFragment.OnFragmentInteractionListener {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -133,13 +136,20 @@ public class BrodySquareActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+
+
     public void selectDrawerItem(MenuItem menuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
         switch(menuItem.getItemId()) {
+
             case R.id.nav_first_fragment:
                 fragmentClass = FirstFragment.class;
+                Intent intent = new Intent(BrodySquareActivity.this, MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
@@ -167,7 +177,12 @@ public class BrodySquareActivity extends AppCompatActivity {
         setTitle(menuItem.getTitle());
         // Close the navigation drawer
         mDrawer.closeDrawers();
+
+
     }
+
+
+
 
 
     @Override
@@ -196,11 +211,10 @@ public class BrodySquareActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
-
-
-
-
+    }
 
 
     private class Title extends AsyncTask<Void, Void, Void> {

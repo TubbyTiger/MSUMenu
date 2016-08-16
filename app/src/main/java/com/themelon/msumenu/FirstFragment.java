@@ -1,6 +1,7 @@
 package com.themelon.msumenu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,7 @@ import android.view.ViewGroup;
  * Use the {@link FirstFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FirstFragment extends Fragment {
+public class FirstFragment extends  android.support.v4.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -70,25 +71,17 @@ public class FirstFragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
+            System.out.println("HELLO");
             mListener.onFragmentInteraction(uri);
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+
     }
 
     /**
@@ -102,7 +95,10 @@ public class FirstFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
+
         // TODO: Update argument type and name
+
         void onFragmentInteraction(Uri uri);
+
     }
 }
