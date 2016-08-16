@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -39,6 +40,11 @@ implements FirstFragment.OnFragmentInteractionListener {
 
     String url = "https://eatatstate.com/menus/brody";
     ProgressDialog mProgressDialog;
+
+
+
+
+
 
     public void foodArray(int count, ArrayList<String> Arrayfood,Element mealElement) {
         if (count==0){
@@ -120,9 +126,39 @@ implements FirstFragment.OnFragmentInteractionListener {
         setupDrawerContent(nvDrawer);
 
 
+        summerfontblack(R.id.textView32);
+        summerfont(R.id.textView33);
+        summerfont(R.id.textView34);
+        summerfont(R.id.textView35);
+        summerfont(R.id.textView36);
+        summerfontblack(R.id.SSBreakfasttxt);
+        summerfontblack(R.id.SSLunchTxt);
+        summerfontblack(R.id.SSDinnerTxt);
+        summerfontblack(R.id.SSLateNightTxt);
+
+
 
 
     }
+        public void summerfontshadow(int id){
+            TextView tx = (TextView)findViewById(id);
+            Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/KGSummerSunshineShadow.ttf");
+            tx.setTypeface(custom_font);
+        }
+
+        public void summerfontblack(int id) {
+            TextView tx = (TextView) findViewById(id);
+            Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/KGSummerSunshineBlackout.ttf");
+            tx.setTypeface(custom_font);
+        }
+
+    public void summerfont(int id){
+        TextView tx = (TextView)findViewById(id);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/KGSummerSunshine.ttf");
+        tx.setTypeface(custom_font);
+
+    }
+
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
     }
