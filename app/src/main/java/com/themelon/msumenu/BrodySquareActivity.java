@@ -151,6 +151,7 @@ implements FirstFragment.OnFragmentInteractionListener {
                 Intent intent = new Intent(BrodySquareActivity.this, MainActivity.class);
                 startActivity(intent);
                 break;
+
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
                 break;
