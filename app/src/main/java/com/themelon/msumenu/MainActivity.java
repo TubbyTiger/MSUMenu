@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageButton BrodySquareButt;
-        BrodySquareButt = (ImageButton)findViewById(R.id.BrodySquareButton);
+        Button BrodySquareButt;
+        BrodySquareButt = (Button)findViewById(R.id.BrodySquareButton);
         BrodySquareButt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
