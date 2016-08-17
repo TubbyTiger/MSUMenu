@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 
-public class BrodySquareActivity extends AppCompatActivity
+public class BrodySquareActivity extends MainActivity
 implements FirstFragment.OnFragmentInteractionListener {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
@@ -228,15 +228,7 @@ implements FirstFragment.OnFragmentInteractionListener {
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-        if (drawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
 
-    }
 
     // `onPostCreate` called when activity start-up is complete after `onStart()`
     // NOTE! Make sure to override the method with only a single `Bundle` argument
