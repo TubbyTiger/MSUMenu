@@ -126,7 +126,7 @@ implements FirstFragment.OnFragmentInteractionListener {
         setupDrawerContent(nvDrawer);
 
 
-        summerfontblack(R.id.textView32);
+        summerfontshadow(R.id.textView32);
         summerfont(R.id.textView33);
         summerfont(R.id.textView34);
         summerfont(R.id.textView35);
