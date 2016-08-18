@@ -2,6 +2,7 @@ package com.themelon.msumenu;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,7 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+implements FirstFragment.OnFragmentInteractionListener {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -80,9 +82,14 @@ public class MainActivity extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment:
                 fragmentClass = FirstFragment.class;
+                Intent intent = new Intent(MainActivity.this, BrodySquareActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
+                intent = new Intent(MainActivity.this, ChatActivity.class);
+                startActivity(intent);
+
                 break;
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
@@ -132,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
         super.onPostCreate(State);
         // Sync the toggle state after onRestoreInstanceState has occurred.
         drawerToggle.syncState();
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }

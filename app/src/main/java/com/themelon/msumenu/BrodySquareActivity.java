@@ -30,7 +30,7 @@ import java.net.URI;
 import java.util.ArrayList;
 
 public class BrodySquareActivity extends MainActivity
-implements FirstFragment.OnFragmentInteractionListener {
+implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -190,6 +190,8 @@ implements FirstFragment.OnFragmentInteractionListener {
 
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
+                intent = new Intent(BrodySquareActivity.this, ChatActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
