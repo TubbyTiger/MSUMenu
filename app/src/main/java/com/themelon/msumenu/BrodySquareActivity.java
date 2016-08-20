@@ -126,15 +126,15 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
         setupDrawerContent(nvDrawer);
 
 
-        summerfontshadow(R.id.textView32);
-        summerfont(R.id.textView33);
-        summerfont(R.id.textView34);
-        summerfont(R.id.textView35);
-        summerfont(R.id.textView36);
-        summerfontblack(R.id.SSBreakfasttxt);
-        summerfontblack(R.id.SSLunchTxt);
-        summerfontblack(R.id.SSDinnerTxt);
-        summerfontblack(R.id.SSLateNightTxt);
+       // summerfontshadow(R.id.textView32);
+        //summerfont(R.id.textView33);
+        //summerfont(R.id.textView34);
+       // summerfont(R.id.textView35);
+       // summerfont(R.id.textView36);
+       // summerfontblack(R.id.SSBreakfasttxt);
+       // summerfontblack(R.id.SSLunchTxt);
+       // summerfontblack(R.id.SSDinnerTxt);
+        //summerfontblack(R.id.SSLateNightTxt);
 
 
 
