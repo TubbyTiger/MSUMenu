@@ -131,7 +131,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BPBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -139,7 +140,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BPLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -147,7 +149,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BPDinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -155,7 +158,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BPLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape" />
             </TableRow>
 
 

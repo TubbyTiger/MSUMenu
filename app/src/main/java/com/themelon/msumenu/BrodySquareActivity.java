@@ -42,7 +42,45 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
     ProgressDialog mProgressDialog;
 
 
+    public void equalTextview(TextView breakfast, TextView lunch, TextView dinner, TextView latenight) {
+        int max = 0;
+        ArrayList<String> intArray = new ArrayList<String>();
+        int intB = breakfast.getLayout().getLineCount();
+        int intL = lunch.getLayout().getLineCount();
+        int intD = dinner.getLayout().getLineCount();
+        int intLN = latenight.getLayout().getLineCount();
 
+        intArray.add(Integer.toString(intB));
+        intArray.add(Integer.toString(intL));
+        intArray.add(Integer.toString(intD));
+        intArray.add(Integer.toString(intLN));
+
+        for (int i = 0; i < 4; i++) {
+            int compare = Integer.parseInt(intArray.get(i));
+            if (max < compare) {
+                max = compare;
+            }
+        }
+
+        while (intB != max) {
+            intB++;
+            breakfast.append("\n");
+        }
+        while (intL != max) {
+            intL++;
+            lunch.append("\n");
+        }
+
+        while (intD != max) {
+            intD++;
+            dinner.append("\n");
+        }
+        while (intLN != max) {
+            intLN++;
+            latenight.append("\n");
+        }
+
+    }
 
 
 
@@ -255,6 +293,8 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
         ArrayList<String> BPLunchArray = new ArrayList<String>();
         ArrayList<String> BPDinnerArray = new ArrayList<String>();
         ArrayList<String> BPLateNightArray = new ArrayList<String>();
+
+
 
         ArrayList<String> BGBreakfastArray = new ArrayList<String>();
         ArrayList<String> BGLunchArray = new ArrayList<String>();
@@ -713,8 +753,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView BPLateNight = (TextView) findViewById(R.id.BPLateNightTxt);
             settingText(BPLateNightArray,BPLateNight);
-
-
+            equalTextview(BPBreakfast,BPLunch,BPDinner,BPLateNight);
 
             TextView BGBreakfast = (TextView)findViewById(R.id.BGBreakfasttxt);
             settingText(BGBreakfastArray,BGBreakfast);
@@ -727,6 +766,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView BGLateNight = (TextView) findViewById(R.id.BGLateNightTxt);
             settingText(BGLateNightArray,BGLateNight);
+            equalTextview(BGBreakfast,BGLunch,BGDinner,BGLateNight);
 
 
 
@@ -741,12 +781,14 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView CALateNight = (TextView) findViewById(R.id.CALateNightTxt);
             settingText(CALateNightArray,CALateNight);
+            equalTextview(CABreakfast,CALunch,CADinner,CALateNight);
 
 
 
 
             TextView COBreakfast = (TextView)findViewById(R.id.COBreakfasttxt);
             settingText(COBreakfastArray,COBreakfast);
+
 
             TextView COLunch = (TextView)findViewById(R.id.COLunchTxt);
             settingText(COLunchArray,COLunch);
@@ -756,6 +798,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView COLateNight = (TextView) findViewById(R.id.COLateNightTxt);
             settingText(COLateNightArray,COLateNight);
+            equalTextview(COBreakfast,COLunch,CODinner,COLateNight);
 
 
 
@@ -771,6 +814,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView DOLateNight = (TextView) findViewById(R.id.DOLateNightTxt);
             settingText(DOLateNightArray,DOLateNight);
+            equalTextview(DOBreakfast,DOLunch,DODinner,DOLateNight);
 
 
 
@@ -786,6 +830,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView HOLateNight = (TextView) findViewById(R.id.HOLateNightTxt);
             settingText(HOLateNightArray,HOLateNight);
+            equalTextview(HOBreakfast,HOLunch,HODinner,HOLateNight);
 
 
 
@@ -800,6 +845,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView PALateNight = (TextView) findViewById(R.id.PALateNightTxt);
             settingText(PALateNightArray,PALateNight);
+            equalTextview(PABreakfast,PALunch,PADinner,PALateNight);
 
 
             TextView SSBreakfast = (TextView)findViewById(R.id.SSBreakfasttxt);
@@ -813,6 +859,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView SSLateNight = (TextView) findViewById(R.id.SSLateNightTxt);
             settingText(SSLateNightArray,SSLateNight);
+            equalTextview(SSBreakfast,SSLunch,SSDinner,SSLateNight);
 
 
             TextView STBreakfast = (TextView)findViewById(R.id.STBreakfasttxt);
@@ -826,6 +873,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView STLateNight = (TextView) findViewById(R.id.STLateNightTxt);
             settingText(STLateNightArray,STLateNight);
+            equalTextview(STBreakfast,STLunch,STDinner,STLateNight);
 
 
 
@@ -841,6 +889,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
             TextView VOLateNight = (TextView) findViewById(R.id.VOLateNightTxt);
             settingText(VOLateNightArray,VOLateNight);
+            equalTextview(VOBreakfast,VOLunch,VODinner,VOLateNight);
 
 
 
