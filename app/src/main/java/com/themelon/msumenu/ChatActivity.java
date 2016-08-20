@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +42,7 @@ import java.util.Set;
 
 public class ChatActivity extends AppCompatActivity {
 
-
+//    Firebase firebaseref = new Firebase("https://msumenu-5da73.firebaseio.com/");
 
     private ListView listView;
     private ArrayAdapter<String> arrayAdapter;
@@ -56,6 +57,9 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
+
+
+
         listView = (ListView) findViewById(R.id.listView);
 
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list_of_rooms);
@@ -64,13 +68,13 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-        root.addValueEventListener(new ValueEventListener() {
+
+        root.child("Rooms").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Set<String> set = new HashSet<String>();
                 Iterator i = dataSnapshot.getChildren().iterator();
-
                 while (i.hasNext()){
                     set.add(((DataSnapshot)i.next()).getKey());
                 }
@@ -83,7 +87,7 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+            System.out.println("PERMISSIONDENIED");
             }
         });
 

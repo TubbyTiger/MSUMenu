@@ -82,7 +82,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment:
                 fragmentClass = FirstFragment.class;
-                Intent intent = new Intent(MainActivity.this, BrodySquareActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_second_fragment:

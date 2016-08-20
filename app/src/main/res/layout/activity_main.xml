@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    >
+    android:background="#030303">
 
 
 <LinearLayout
@@ -17,19 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.themelon.memory_game.MainActivity"
 
-        android:contextClickable="false"
-        android:layout_marginLeft="-10dp"
-        android:layout_marginTop="-10dp"
-        android:layout_marginRight="-10dp">
 
 
 
@@ -67,14 +55,62 @@
                         android:background="@drawable/brodyrr"
                         android:textColor="#ffffff"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:contextClickable="false" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:text="The Gallery"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center"
+                        android:id="@+id/GalleryButton"
+                        android:background="@drawable/gallery"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:text="Heritage Commons at Landon Hall"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center"
+                        android:id="@+id/HeritageButtom"
+                        android:background="@drawable/heritage"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
 
                 </LinearLayout>
             </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
-</RelativeLayout>
+
 </LinearLayout>
 
     <android.support.design.widget.NavigationView

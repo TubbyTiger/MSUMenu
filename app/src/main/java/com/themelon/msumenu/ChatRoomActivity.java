@@ -50,7 +50,7 @@ public class ChatRoomActivity extends AppCompatActivity {
 
                 Map<String,Object> map = new HashMap<String, Object>();
                 temp_key = root.push().getKey();
-                root.updateChildren(map);
+                root.child("Rooms").updateChildren(map);
 
                 DatabaseReference message_root = root.child(temp_key);
                 Map<String,Object> map2 = new HashMap<String, Object>();
@@ -61,7 +61,7 @@ public class ChatRoomActivity extends AppCompatActivity {
             }
         });
 
-        root.addChildEventListener(new ChildEventListener() {
+        root.child("Rooms").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
