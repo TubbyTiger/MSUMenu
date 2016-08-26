@@ -26,7 +26,8 @@
             android:textAlignment="center">
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_green_light">
 
                 <TextView
                     android:layout_width="0dp"
@@ -37,8 +38,8 @@
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="15dp"
-                    android:background="@android:color/holo_green_light"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -49,8 +50,8 @@
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="15dp"
-                    android:background="@android:color/holo_green_light"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -61,8 +62,8 @@
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="15dp"
-                    android:background="@android:color/holo_green_light"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -73,8 +74,8 @@
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="15dp"
-                    android:background="@android:color/holo_green_light"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#ffffff" />
 
             </TableRow>
         </TableLayout>
@@ -87,7 +88,8 @@
     android:id="@+id/scrollView"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#f4e589">
 
 
 
@@ -119,7 +121,10 @@
                 android:text="BOILING POINT"
                 android:id="@+id/textView5"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:background="@drawable/cell_shape" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -132,7 +137,7 @@
                     android:id="@+id/BPBreakfasttxt"
                     android:textIsSelectable="false"
                     android:textSize="10dp"
-                    android:background="@drawable/cell_shape" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -141,7 +146,7 @@
                     android:id="@+id/BPLunchTxt"
                     android:textIsSelectable="false"
                     android:textSize="10dp"
-                    android:background="@drawable/cell_shape" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -150,7 +155,7 @@
                     android:id="@+id/BPDinnerTxt"
                     android:textIsSelectable="false"
                     android:textSize="10dp"
-                    android:background="@drawable/cell_shape" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -159,7 +164,8 @@
                     android:id="@+id/BPLateNightTxt"
                     android:textIsSelectable="false"
                     android:textSize="10dp"
-                    android:background="@drawable/cell_shape" />
+                    android:textColor="#000000" />
+
             </TableRow>
 
 
@@ -179,7 +185,10 @@
                 android:text="Brimstone Grille"
                 android:id="@+id/textView7"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:background="@drawable/cell_shape" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -191,7 +200,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BGBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -199,7 +209,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BGLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -207,7 +218,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BGDinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -215,7 +227,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/BGLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -227,7 +240,10 @@
                 android:text="Cayenne&apos;s"
                 android:id="@+id/textView12"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -239,7 +255,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/CABreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -247,7 +264,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/CALunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -255,7 +273,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/CADinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -263,7 +282,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/CALateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -278,7 +298,10 @@
                 android:text="Ciao"
                 android:id="@+id/textView47"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -290,7 +313,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/COBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -298,7 +322,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/COLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -306,7 +331,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/CODinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -314,7 +340,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/COLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -327,7 +354,10 @@
                 android:text="Dolce"
                 android:id="@+id/textView17"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -339,7 +369,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/DOBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -347,7 +378,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/DOLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -355,7 +387,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/DODinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -363,7 +396,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/DOLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -378,7 +412,10 @@
                 android:text="Homestyle"
                 android:id="@+id/textView22"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -390,7 +427,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/HOBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -398,7 +436,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/HOLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -406,7 +445,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/HODinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -414,7 +454,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/HOLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -426,7 +467,10 @@
                 android:text="Pangea"
                 android:id="@+id/textView27"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -438,7 +482,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/PABreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -446,7 +491,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/PALunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -454,7 +500,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/PADinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -462,7 +509,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/PALateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -475,7 +523,10 @@
                 android:text="S2: Salad and Sushi"
                 android:id="@+id/textView32"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -487,7 +538,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/SSBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -495,7 +547,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/SSLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -503,7 +556,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/SSDinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -511,7 +565,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/SSLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
 
@@ -523,7 +578,10 @@
                 android:text="Stacks"
                 android:id="@+id/textView37"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -535,7 +593,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/STBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -543,7 +602,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/STLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -551,7 +611,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/STDinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -559,7 +620,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/STLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
             </TableRow>
 
             <TextView
@@ -569,7 +631,10 @@
                 android:text="Veg Out"
                 android:id="@+id/textView42"
                 android:textAlignment="center"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold" />
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -581,7 +646,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/VOBreakfasttxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -589,7 +655,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/VOLunchTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -597,7 +664,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/VODinnerTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -605,7 +673,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/VOLateNightTxt"
                     android:textIsSelectable="false"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:textColor="#000000" />
+
             </TableRow>
 
 
@@ -613,10 +683,10 @@
         </TableLayout>
 
 
-
     </LinearLayout>
 
 </ScrollView>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

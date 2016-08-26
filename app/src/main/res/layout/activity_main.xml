@@ -52,7 +52,7 @@
                         android:layout_weight="1"
                         android:gravity="bottom|center"
                         android:id="@+id/BrodySquareButton"
-                        android:background="@drawable/brodyrr"
+                        android:background="@drawable/brodyrip"
                         android:textColor="#ffffff"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -76,7 +76,7 @@
                         android:layout_weight="1"
                         android:gravity="bottom|center"
                         android:id="@+id/GalleryButton"
-                        android:background="@drawable/gallery"
+                        android:background="@drawable/galleryrip"
                         android:textColor="#ffffff"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -98,7 +98,51 @@
                         android:layout_weight="1"
                         android:gravity="bottom|center"
                         android:id="@+id/HeritageButtom"
-                        android:background="@drawable/heritage"
+                        android:background="@drawable/heritagerip"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:text="Akers"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center"
+                        android:id="@+id/AkersButton"
+                        android:background="@drawable/akers"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:text="Holmes"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center"
+                        android:id="@+id/HolmesButton"
+                        android:background="@drawable/holmes"
                         android:textColor="#ffffff"
                         android:textSize="20dp"
                         android:textStyle="bold"

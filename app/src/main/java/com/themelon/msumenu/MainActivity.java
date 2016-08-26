@@ -37,6 +37,35 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 startActivity(intent);
                 }
             });
+        Button GalleryButt;
+        GalleryButt = (Button)findViewById(R.id.GalleryButton);
+        GalleryButt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button AkersButt;
+        AkersButt = (Button)findViewById(R.id.AkersButton);
+        AkersButt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, AkersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button HolmesButt;
+        HolmesButt = (Button)findViewById(R.id.HolmesButton);
+        HolmesButt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, HolmesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

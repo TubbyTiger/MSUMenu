@@ -33,9 +33,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -49,13 +51,14 @@ public class ChatActivity extends AppCompatActivity {
     private ArrayList<String> list_of_rooms = new ArrayList<>();
     private String name;
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
+    private DatabaseReference rootGeneral = FirebaseDatabase.getInstance().getReference().child("Population").child("GeneralP");
+    boolean generalPop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
-
+        
 
 
 
@@ -103,9 +106,22 @@ public class ChatActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        generalPop = true;
+        rootGeneral.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int test = dataSnapshot.getValue(int.class);
+                    if (generalPop == true) {
+                        rootGeneral.setValue(test + 1);
+                        generalPop = false;
+                    }
 
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-
+            }
+        });
     }
 
 
@@ -179,7 +195,26 @@ public class ChatActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    public void onDestroy() {
+        super.onDestroy();
 
+        rootGeneral.addValueEventListener(new ValueEventListener() {
+            boolean generalPopExit = true;
 
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int test = dataSnapshot.getValue(int.class);
+                if (generalPopExit == true) {
+                    rootGeneral.setValue(test - 1);
+                    generalPopExit = false;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
 }

@@ -7,6 +7,8 @@
         <item name="android:statusBarColor">@android:color/holo_green_dark</item>
 
 
+
+
     </style>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">

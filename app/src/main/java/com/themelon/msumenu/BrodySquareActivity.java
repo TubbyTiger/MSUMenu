@@ -18,6 +18,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -372,8 +374,8 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(BrodySquareActivity.this);
-            mProgressDialog.setTitle("Brody Square Lunch Menu");
-            mProgressDialog.setMessage("Loading Brody Square Lunch Menu");
+            mProgressDialog.setTitle("Brody Square Menu");
+            mProgressDialog.setMessage("Loading Brody Square Menu");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
         }
@@ -743,6 +745,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
             //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
             settingText(BPBreakfastArray,BPBreakfast);
+
 
             TextView BPLunch = (TextView)findViewById(R.id.BPLunchTxt);
             settingText(BPLunchArray,BPLunch);
