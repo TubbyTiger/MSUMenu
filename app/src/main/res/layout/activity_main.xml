@@ -150,6 +150,28 @@
 
 
                 </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:text="RiverWalk Market"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center"
+                        android:id="@+id/RiverwalkButton"
+                        android:background="@drawable/holmes"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
+
+                </LinearLayout>
             </LinearLayout>
 
             </LinearLayout>

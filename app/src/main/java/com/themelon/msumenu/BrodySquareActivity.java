@@ -117,7 +117,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
         for( int i=0;i<total;i++){
             if(foodLoc.equals(menuTitle.get(i).child(0).text())) {
                 foodLocArray.add(i);
-
+                System.out.println(i);
             }
         }
     }
@@ -517,7 +517,8 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
 
 
-                Elements BPcounterB = BPBreakfastElem.getElementsByTag("div");
+                Elements BPcounterB = BPBreakfastElem.getElementsByTag
+                        ("div");
                 int BPcountB = BPcounterB.size();
 
                 Elements BPcounterL = BPLunchElem.getElementsByTag("div");

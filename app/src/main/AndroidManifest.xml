@@ -39,7 +39,9 @@
         <activity android:name=".ChatRoomActivity" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".AkersActivity" />
-        <activity android:name=".HolmesActivity"></activity>
+        <activity android:name=".HolmesActivity" />
+        <activity android:name=".HubbardActivity" />
+        <activity android:name=".RiverwalkActivity"></activity>
     </application>
 
 </manifest>

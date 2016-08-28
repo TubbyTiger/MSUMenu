@@ -65,6 +65,15 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 startActivity(intent);
             }
         });
+        Button RiverwalkButt;
+        RiverwalkButt = (Button)findViewById(R.id.RiverwalkButton);
+        RiverwalkButt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, RiverwalkActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
