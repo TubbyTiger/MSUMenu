@@ -228,11 +228,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 startActivity(intent);
                 break;
 
-            case R.id.nav_second_fragment:
-                fragmentClass = SecondFragment.class;
-                intent = new Intent(BrodySquareActivity.this, ChatActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
                 break;
@@ -398,7 +394,6 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 Elements Lunch = document.select("td[class=views-field views-field-field-lunch-menu-value]");
                 Elements Dinner = document.select("td[class=views-field views-field-field-dinner-menu-value]");
                 Elements LateNight = document.select("td[class=views-field views-field-field-late-night-value]");
-
                 findIndex(all.size(),"Dolce", menuTitle, DolceArray);
                 findIndex(all.size(),"Boiling Point", menuTitle, BoilingPointArray);
                 findIndex(all.size(),"Brimstone Grille", menuTitle, BrimstoneGrilleArray);
@@ -746,7 +741,6 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
             //     Set description into TextView
             TextView BPBreakfast = (TextView)findViewById(R.id.BPBreakfasttxt);
             settingText(BPBreakfastArray,BPBreakfast);
-
 
             TextView BPLunch = (TextView)findViewById(R.id.BPLunchTxt);
             settingText(BPLunchArray,BPLunch);

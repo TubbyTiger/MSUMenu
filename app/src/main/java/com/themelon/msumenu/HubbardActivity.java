@@ -255,11 +255,7 @@ public class HubbardActivity extends MainActivity
                 startActivity(intent);
                 break;
 
-            case R.id.nav_second_fragment:
-                fragmentClass = SecondFragment.class;
-                intent = new Intent(HubbardActivity.this, ChatActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
                 break;

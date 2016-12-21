@@ -254,11 +254,7 @@ public class AkersActivity extends MainActivity
                 startActivity(intent);
                 break;
 
-            case R.id.nav_second_fragment:
-                fragmentClass = SecondFragment.class;
-                intent = new Intent(AkersActivity.this, ChatActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
                 break;
