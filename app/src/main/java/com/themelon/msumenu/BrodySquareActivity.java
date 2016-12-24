@@ -215,7 +215,6 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
 
 
-
     public void selectDrawerItem(MenuItem menuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
@@ -404,7 +403,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 findIndex(all.size(),"S2: Salad and Sushi", menuTitle, SaladAndSushiArray);
                 findIndex(all.size(),"Stacks", menuTitle, StacksArray);
                 findIndex(all.size(),"Veg Out", menuTitle, VegOutArray);
-
+                // findIndex: Finds elements within the string: food locations then adds them to the appropriate array.
 
 
 
@@ -423,8 +422,9 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 int finalintST = setIndex(StacksArray,Breakfast,Lunch,Dinner,LateNight);
                 int finalintVO = setIndex(VegOutArray,Breakfast,Lunch,Dinner,LateNight);
 
-
-
+                // This was to account for the duplicate food location titles.
+                //setIndex: If there is a duplicate there will be 2 elements in the array with sub-elements (food items)
+                //  It compares the size of the 2 elements and it returns the bigger size element as the final array.
 
 
 
