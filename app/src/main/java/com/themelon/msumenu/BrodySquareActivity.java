@@ -385,6 +385,15 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
                 Elements all = document.select("[class=views-table cols-4]");
 
+                if(all.hasText()){
+                    System.out.println("TRUE");
+                // There is more than 1 individual entering the data for each cafe.
+                    //This is very annoying. They take all of the food locations out for Brody and for Akers they leave all the food locations "closed,"
+                            //which would make things simple if all of the cafes did it that way.
+                    //This if statement checks if there is the class: "views-table cols-4". If yes, ,continue with code, if no, then I might leave it blank or add the string "closed" to the arrays.
+
+
+
 
 
 
@@ -424,7 +433,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
                 // This was to account for the duplicate food location titles.
                 //setIndex: If there is a duplicate there will be 2 elements in the array with sub-elements (food items)
-                //  It compares the size of the 2 elements and it returns the bigger size element as the final array.
+                //  It compares the size of the 2 elements and it returns the bigger size element as the final integer finalint--.
 
 
 
@@ -512,8 +521,7 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
 
 
 
-                Elements BPcounterB = BPBreakfastElem.getElementsByTag
-                        ("div");
+                Elements BPcounterB = BPBreakfastElem.getElementsByTag("div");
                 int BPcountB = BPcounterB.size();
 
                 Elements BPcounterL = BPLunchElem.getElementsByTag("div");
@@ -726,6 +734,15 @@ implements FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmen
                 foodArray(VOcountL,VOLunchArray,VOLunchElem);
                 foodArray(VOcountD,VODinnerArray,VODinnerElem);
                 foodArray(VOcountLN,VOLateNightArray,VOLateNightElem);
+                }
+                else{
+                    System.out.println("FALSE");
+
+
+
+
+                }
+
             }
             catch (IOException e) {
                 e.printStackTrace();

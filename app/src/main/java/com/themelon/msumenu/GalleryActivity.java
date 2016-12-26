@@ -379,14 +379,15 @@ public class GalleryActivity extends MainActivity
         protected Void doInBackground(Void...params){
             try {
                 // Connect to website
+
                 Document document = Jsoup.connect(url).get();
 
                 Elements menuTitle = document.select("table[class=views-table cols-4]");
 
                 Elements all = document.select("[class=views-table cols-4]");
 
-
-
+                if(all.hasText()){
+                    System.out.println("TRUE");
 
 
                 Elements Breakfast = document.select("td[class=views-field views-field-field-breakfast-menu-value]");
@@ -615,6 +616,10 @@ public class GalleryActivity extends MainActivity
 
 
                 backgrounddoin(document, "Bliss", BlissArray, Breakfast, Lunch,Dinner,LateNight,BLBreakfastArray,BLLunchArray,BLDinnerArray,BLLateNightArray);
+            }
+            else{
+                System.out.println("False");
+            }
 
             }
             catch (IOException e) {

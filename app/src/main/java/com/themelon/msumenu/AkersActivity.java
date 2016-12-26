@@ -376,6 +376,12 @@ public class AkersActivity extends MainActivity
 
                 Elements all = document.select("[class=views-table cols-4]");
 
+                if(all.hasText()){
+                    System.out.println("True");
+
+
+
+
 
 
 
@@ -400,6 +406,11 @@ public class AkersActivity extends MainActivity
 
 
 
+                }
+                else{
+                    System.out.println("FALSE");
+
+                }
 
 
 
@@ -416,6 +427,7 @@ public class AkersActivity extends MainActivity
         protected void onPostExecute(Void result) {
 
             //     Set description into TextView
+            System.out.println(TPBreakfastArray);
             TextView TPBreakfast = (TextView)findViewById(R.id.TPBreakfasttxt);
             settingText(TPBreakfastArray,TPBreakfast);
 

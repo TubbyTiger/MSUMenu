@@ -360,6 +360,8 @@ public class HolmesActivity extends MainActivity
 
                 Elements all = document.select("[class=views-table cols-4]");
 
+                if(all.hasText()){
+                    System.out.println("TRUE");
 
 
 
@@ -382,6 +384,10 @@ public class HolmesActivity extends MainActivity
 
 
 
+            }
+            else{
+                System.out.println("False");
+            }
 
 
             }

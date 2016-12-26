@@ -361,6 +361,8 @@ public class HubbardActivity extends MainActivity
                 Elements all = document.select("[class=views-table cols-4]");
 
 
+                if(all.hasText()){
+                    System.out.println("TRUE");
 
 
 
@@ -380,6 +382,10 @@ public class HubbardActivity extends MainActivity
                 backgrounddoin(document, "Today's Features", Breakfast, Lunch,Dinner,LateNight,TFBreakfastArray,TFLunchArray,TFDinnerArray,TFLateNightArray);
 
 
+            }
+            else{
+                System.out.println("False");
+            }
 
 
 
